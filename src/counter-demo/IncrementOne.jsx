@@ -1,4 +1,4 @@
-import { useStore } from './store'
+import { useStore } from './counter_store'
 import { Link } from 'react-router-dom'
 
 function IncrementOne() {
@@ -9,6 +9,9 @@ function IncrementOne() {
             <h1>Increment One</h1>
             <button onClick={increment}>
                 count is {count}
+            </button>
+            <button onClick={increment} style={{ marginLeft: '10px' }}>
+                Increment
             </button>
             <button onClick={decrement} style={{ marginLeft: '10px' }}>
                 Decrement
