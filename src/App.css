@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  width: 90vw;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -52,5 +52,43 @@
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  width: 1200px;
+}
+
+/* Theme Styles */
+.theme-container {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.theme-container.light {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+}
+
+.theme-container.dark {
+  --bg-color: #333333;
+  --text-color: #ffffff;
+}
+
+.theme-container.ocean {
+  --bg-color: #B3E5FC;
+  --text-color: #01579B;
+}
+
+.theme-container.forest {
+  --bg-color: #C8E6C9;
+  --text-color: #1B5E20;
+}
+
+.theme-buttons button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.theme-buttons button:active {
+  transform: scale(.95);
 }
