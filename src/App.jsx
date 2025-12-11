@@ -4,6 +4,7 @@ import IncrementTwo from './counter-demo/IncrementTwo'
 import './App.css'
 import ThemeComponent from './theme/ThemeComponent'
 import { ThemeProvider } from './theme/ThemeContext'
+import FlagGame from './flag-game/FlagGame'
 
 function Home() {
   return (
@@ -16,6 +17,9 @@ function Home() {
         </div>
         <div className="card demo-wrapper">
           <Link to="/theme">Theme Demo</Link>
+        </div>
+        <div className="card demo-wrapper">
+          <Link to="/flag-game">Flag Game Demo</Link>
         </div>
       </div>
     </>
@@ -30,6 +34,7 @@ function App() {
         <Route path="/increment-one" element={<IncrementOne />} />
         <Route path="/increment-two" element={<IncrementTwo />} />
         <Route path="/theme" element={<ThemeComponent />} />
+        <Route path="/flag-game" element={<FlagGame />} />
       </Routes>
     </ThemeProvider>
   )
