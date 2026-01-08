@@ -5,7 +5,7 @@ import Confetti from 'react-confetti'
 import './FlagGame.css'
 
 function FlagGame() {
-    const { attempts, currentCountry, error, fetchCountry, checkAnswer, fetchInput } = useStore()
+    const { countries, attempts, currentCountry, error, fetchCountry, checkAnswer, fetchInput, incorrectAnswers } = useStore()
     const isWon = attempts.some(attempt => attempt.status === "correct");
 
     useEffect(() => {
@@ -37,7 +37,14 @@ function FlagGame() {
                             className={attempt.status}
                             name="country"
                             disabled={attempt.status !== "pending" || attempts.some(a => a.status === "correct")}
+                            list={`countries-${index}`}
+                            id={index}
                         />
+                        <datalist id={`countries-${index}`}>
+                            {Object.keys(countries).map((country, i) => (
+                                <option key={i} value={!incorrectAnswers.includes(country) ? country : ""}></option>
+                            ))}
+                        </datalist>
                         <button
                             onClick={() => checkAnswer(index)}
                             disabled={attempt.status !== "pending" || attempts.some(a => a.status === "correct")}

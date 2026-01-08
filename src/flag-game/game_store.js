@@ -6,6 +6,7 @@ export const useStore = create((set, get) => ({
     currentCountry: null,
     error: "",
     incorrectAnswer: "",
+    incorrectAnswers: [],
     correctAnswer: "",
     attempts: new Array(6).fill({ value: "", status: "pending" }),
     fetchCountry: async () => {
@@ -33,6 +34,7 @@ export const useStore = create((set, get) => ({
                 attempts: new Array(6).fill({ value: "", status: "pending" }),
                 correctAnswer: "",
                 incorrectAnswer: "",
+                incorrectAnswers: [],
                 error: ""
             });
 
@@ -51,7 +53,6 @@ export const useStore = create((set, get) => ({
         const { currentCountry, attempts, countries } = get();
         const attempt = attempts[index];
         const attemptValueLower = attempt.value.toLowerCase();
-
         // Check if value is a valid country name
         const isValidCountry = Object.keys(countries).some(name => name.toLowerCase() === attemptValueLower);
 
@@ -69,6 +70,7 @@ export const useStore = create((set, get) => ({
                 attempts: newAttempts,
                 correctAnswer: isCorrect ? attempt.value : "",
                 incorrectAnswer: !isCorrect ? attempt.value : "",
+                incorrectAnswers: !isCorrect ? [...state.incorrectAnswers, attempt.value] : state.incorrectAnswers,
                 error: ""
             };
         });
