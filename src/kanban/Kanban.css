@@ -1,0 +1,40 @@
+.kanban-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.kanban-column {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    width: 20vw;
+    border-right: 1px solid white;
+    align-items: center;
+}
+
+.ticket-container {
+    height: 250px;
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    overflow: scroll;
+}
+
+.ticket {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: stretch;
+    gap: 2px;
+    height: auto;
+    width: auto;
+    max-width: 250px;
+}
+
+.ticket-group {
+    text-align: left;
+}
