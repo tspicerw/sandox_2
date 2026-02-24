@@ -5,13 +5,13 @@
     flex-direction: row;
     border: 1px solid white;
     border-radius: 5px;
-    padding: 10px;
+    padding-top: 10px;
 }
 
 .kanban-column {
     display: flex;
     flex-direction: column;
-    height: 90vh;
+    height: 100vh;
     width: 25vw;
     border-right: 1px solid white;
     align-items: center;

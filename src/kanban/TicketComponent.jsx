@@ -3,7 +3,7 @@ import { useStore } from './kanban_store'
 import './Kanban.css'
 
 function TicketComponent() {
-    const { tickets, dragstartHandler } = useStore()
+    const { tickets, dragstartHandler, deleteTicket } = useStore()
 
     return (
         <>
@@ -20,7 +20,7 @@ function TicketComponent() {
                             Priority: {ticket.priority}
                         </span>
                         <br />
-                        <button onClick={() => { }}>Delete</button>
+                        <button onClick={() => deleteTicket(ticket)}>Delete</button>
                         <button onClick={() => { }}>Update</button>
                     </div>
                 </div>
